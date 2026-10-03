@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ashish Sharda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #EDF1F4;
+  --ink: #14233A;
+  --ink-soft: #46576F;
+  --blue: #2A64AE;
+  --magenta: #B0307A;
+  --rule: rgba(20, 35, 58, .16);
+  --grid: rgba(42, 100, 174, .16);
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1828; --ink: #E7EDF5; --ink-soft: #A4B3C7; --blue: #7FB1F2; --magenta: #F07AB8;
+    --rule: rgba(231, 237, 245, .18); --grid: rgba(127, 177, 242, .16);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1828; --ink: #E7EDF5; --ink-soft: #A4B3C7; --blue: #7FB1F2; --magenta: #F07AB8;
+  --rule: rgba(231, 237, 245, .18); --grid: rgba(127, 177, 242, .16);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 1.1875rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--magenta); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--magenta); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
+#sky { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero .wrap { position: relative; padding-top: 96px; padding-bottom: 88px; min-height: 480px; display: flex; flex-direction: column; justify-content: flex-end; }
+h1 {
+  font-family: var(--display); font-weight: 800; letter-spacing: -.035em; line-height: .92;
+  font-size: clamp(3.4rem, 11vw, 8rem); margin: 0 0 22px;
+}
+.role { font-family: var(--display); font-weight: 500; font-size: clamp(1.1rem, 2.4vw, 1.45rem); margin: 0 0 6px; letter-spacing: -.01em; }
+.sub { margin: 0 0 30px; color: var(--ink-soft); max-width: 46ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  font-family: var(--display); font-weight: 700; font-size: 1rem; text-decoration: none;
+  padding: 11px 20px; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 999px;
+}
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn:hover { border-color: var(--magenta); color: var(--bg); background: var(--magenta); }
+
+/* Sections */
+section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: 0; }
+.row { display: grid; grid-template-columns: 200px 1fr; gap: 24px 48px; }
+h2 { font-family: var(--display); font-weight: 700; font-size: 1.15rem; letter-spacing: -.01em; margin: 4px 0 0; }
+.row p { margin: 0 0 1em; max-width: 62ch; }
+.row p:last-child { margin-bottom: 0; }
+
+.list { list-style: none; margin: 0; padding: 0; max-width: 700px; }
+.list li { padding: 18px 0; border-top: 1px solid var(--rule); }
+.list li:first-child { border-top: 0; padding-top: 0; }
+.list li:last-child { padding-bottom: 0; }
+.list .t { font-family: var(--display); font-weight: 700; font-size: 1.2rem; letter-spacing: -.01em; }
+.list .t a { color: var(--ink); text-decoration-color: var(--blue); }
+.list .t a:hover { color: var(--magenta); }
+.list .d { display: block; color: var(--ink-soft); margin-top: 2px; }
+
+.chips { margin: 0; max-width: 62ch; color: var(--ink-soft); }
+.chips b { font-weight: 500; color: var(--ink); }
+
+footer { padding: 40px 0 56px; color: var(--ink-soft); font-size: 1rem; border-top: 1px solid var(--rule); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
+footer nav { display: flex; gap: 22px; flex-wrap: wrap; }
+
+@media (max-width: 720px) {
+  body { font-size: 1.125rem; }
+  .row { grid-template-columns: 1fr; gap: 12px; }
+  .hero .wrap { padding-top: 72px; padding-bottom: 56px; min-height: 420px; }
+  section { padding: 48px 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1>Ashish<br>Sharda</h1>
+    <p class="role">Head of Engineering, ANRA Technologies</p>
+    <p class="sub">I build the infrastructure that keeps drones from running into each other, and I write and teach about building production AI agents and fast AI systems in Rust.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:ashishjsharda@gmail.com">Get in touch</a>
+      <a class="btn" href="#writing">Read and watch</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap row">
+      <h2>About</h2>
+      <div>
+        <p>I lead engineering at ANRA Technologies, an FAA-connected UAS Service Supplier. We build real-time drone traffic management: the systems that let operators like Amazon, DoorDash, and the FAA share airspace safely. My teams cover DevOps, platform reliability, and product delivery.</p>
+        <p>Before ANRA I led engineering at Apple (Project Titan), LendingTree, where we scaled to 72 engineers, CrossCountry Mortgage, Formant, and etailPet, and worked at Visa, Salesforce, and Yahoo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <div class="wrap row">
+      <h2>Writing and teaching</h2>
+      <ul class="list">
+        <li>
+          <span class="t"><a href="https://www.amazon.com/dp/B0HL5SB485">Agentic Python: Build Production AI Agents from Scratch</a></span>
+          <span class="d">My book, in paperback and on Kindle. It walks through building agents that hold up in production, not just in demos.</span>
+        </li>
+        <li>
+          <span class="t"><a href="https://www.amazon.com/dp/B0H33T3BNP">Rust for AI Engineers</a></span>
+          <span class="d">My second book, for engineers who have hit Python's limits: slow inference loops, memory spikes, and sluggish vector search, and how Rust fixes them.</span>
+        </li>
+        <li>
+          <span class="t"><a href="https://learning.oreilly.com/live-events/ai-agent-memory-essentials/0642572379971/">O'Reilly live training</a></span>
+          <span class="d">AI Agent Memory Essentials: how agents store, retrieve, and forget, and where that breaks.</span>
+        </li>
+        <li>
+          <span class="t"><a href="https://lnkd.in/erZ9B35d">LinkedIn Learning</a></span>
+          <span class="d">Instructor for Rust courses, including Debugging Rust Code with AI.</span>
+        </li>
+        <li>
+          <span class="t"><a href="https://medium.com/@ashishjsharda">Medium</a></span>
+          <span class="d">Essays on engineering leadership, reliability, and AI systems, read by about 2,000 people a month.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap row">
+      <h2>Projects</h2>
+      <ul class="list">
+        <li>
+          <span class="t"><a href="https://plugins.jetbrains.com/plugin/29033-vajra--ai-coding-assistant/">Vajra</a></span>
+          <span class="d">A free, open-source, model-agnostic AI coding platform for JetBrains IDEs and VS Code, plus a security agent framework.</span>
+        </li>
+        <li>
+          <span class="t"><a href="https://skybrief-nine.vercel.app">SkyBrief</a></span>
+          <span class="d">An airspace intelligence agent that turns raw airspace data into a plain-language brief.</span>
+        </li>
+        <li>
+          <span class="t"><a href="https://chromewebstore.google.com/detail/fluxside/ampkfhnmilcmamhkphkemnlmfhdepagd">Fluxside</a></span>
+          <span class="d">A Chrome sidebar that brings Claude, GPT, and Gemini next to your GitHub, Stack Overflow, and Jira tabs. Your API keys stay in your browser.</span>
+        </li>
+        <li>
+          <span class="t"><a href="https://chromewebstore.google.com/detail/playwright-recorder/bapaclfmcgookbglclacfgeemaehkkme">Playwright Recorder</a></span>
+          <span class="d">A Chrome extension that records what you do in the browser and turns it into Playwright test code.</span>
+        </li>
+        <li>
+          <span class="t"><a href="https://loopwell-one.vercel.app">Loopwell</a></span>
+          <span class="d">A platform that helps social-care referrals for food, rides, and housing actually get fulfilled.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap row">
+      <h2>Mentoring</h2>
+      <div>
+        <p>I mentor founders through Techstars and engineers who are moving into leadership. We talk about scaling teams, running reliable systems, and shipping AI features without breaking production.</p>
+        <p><a href="mailto:ashishjsharda@gmail.com?subject=Mentoring%20session">Ask about a session</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap row">
+      <h2>Skills</h2>
+      <p class="chips"><b>Systems:</b> Rust, distributed systems, Kubernetes, Postgres, Redis, observability, incident response. <b>AI:</b> agents, memory, evaluation, LLM tooling. <b>Domain:</b> UTM and UAS service suppliers, Remote ID, DSS, InterUSS. <b>Leadership:</b> hiring, org design, platform reliability, open source.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Ashish Sharda</span>
+    <nav>
+      <a href="https://github.com/ashishjsharda">GitHub</a>
+      <a href="https://www.linkedin.com/in/ashishjsharda/">LinkedIn</a>
+      <a href="https://medium.com/@ashishjsharda">Medium</a>
+      <a href="mailto:ashishjsharda@gmail.com">Email</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var canvas = document.getElementById('sky');
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W = 0, H = 0, dpr = 1, drones = [], grid = null, last = 0, running = false;
+  var R = 15;            // hex size
+  var ALERT = 78;        // conflict radius in px
+
+  function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+
+  function buildGrid() {
+    grid = document.createElement('canvas');
+    grid.width = W * dpr; grid.height = H * dpr;
+    var g = grid.getContext('2d');
+    g.scale(dpr, dpr);
+    g.strokeStyle = css('--grid');
+    g.lineWidth = 1;
+    var w = Math.sqrt(3) * R, h = 2 * R;
+    for (var row = -1; row * h * 0.75 < H + h; row++) {
+      for (var col = -1; col * w < W + w; col++) {
+        var cx = col * w + (row % 2 ? w / 2 : 0), cy = row * h * 0.75;
+        g.beginPath();
+        for (var i = 0; i < 6; i++) {
+          var a = Math.PI / 180 * (60 * i - 30);
+          var px = cx + R * Math.cos(a), py = cy + R * Math.sin(a);
+          if (i === 0) g.moveTo(px, py); else g.lineTo(px, py);
+        }
+        g.closePath(); g.stroke();
+      }
+    }
+  }
+
+  function spawn() {
+    var n = Math.max(9, Math.min(18, Math.round(W / 70)));
+    drones = [];
+    for (var i = 0; i < n; i++) {
+      var ang = Math.random() * Math.PI * 2, sp = 22 + Math.random() * 26;
+      drones.push({ x: Math.random() * W, y: Math.random() * H, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp, sp: sp, hist: [] });
+    }
+  }
+
+  function resize() {
+    var r = canvas.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    buildGrid();
+    spawn();
+    for (var s = 0; s < 120; s++) step(1 / 30);
+    draw();
+  }
+
+  function step(dt) {
+    var i, j, a, b;
+    for (i = 0; i < drones.length; i++) {
+      a = drones[i]; a.alert = false;
+    }
+    for (i = 0; i < drones.length; i++) {
+      for (j = i + 1; j < drones.length; j++) {
+        a = drones[i]; b = drones[j];
+        var dx = b.x - a.x, dy = b.y - a.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < ALERT && d > 0.01) {
+          a.alert = b.alert = true;
+          // deconflict: steer each drone away from the other
+          var k = (1 - d / ALERT) * 90 * dt, ux = dx / d, uy = dy / d;
+          a.vx -= ux * k; a.vy -= uy * k;
+          b.vx += ux * k; b.vy += uy * k;
+        }
+      }
+    }
+    for (i = 0; i < drones.length; i++) {
+      a = drones[i];
+      var s = Math.sqrt(a.vx * a.vx + a.vy * a.vy) || 1;
+      a.vx = a.vx / s * (s + (a.sp - s) * Math.min(1, dt * 2));
+      a.vy = a.vy / s * (s + (a.sp - s) * Math.min(1, dt * 2));
+      a.x += a.vx * dt; a.y += a.vy * dt;
+      if (a.x < -20) a.x = W + 20; if (a.x > W + 20) a.x = -20;
+      if (a.y < -20) a.y = H + 20; if (a.y > H + 20) a.y = -20;
+      a.hist.push(a.x, a.y);
+      if (a.hist.length > 28) a.hist.splice(0, 2);
+    }
+  }
+
+  function draw() {
+    var blue = css('--blue'), mag = css('--magenta');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(grid, 0, 0, W, H);
+    var i, j, a, b;
+    // conflict rings
+    ctx.lineWidth = 1.25;
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = mag;
+    for (i = 0; i < drones.length; i++) {
+      for (j = i + 1; j < drones.length; j++) {
+        a = drones[i]; b = drones[j];
+        var dx = b.x - a.x, dy = b.y - a.y;
+        if (dx * dx + dy * dy < ALERT * ALERT) {
+          ctx.beginPath();
+          ctx.arc((a.x + b.x) / 2, (a.y + b.y) / 2, ALERT / 2 + 6, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
+    }
+    ctx.setLineDash([]);
+    // trails and drones
+    for (i = 0; i < drones.length; i++) {
+      a = drones[i];
+      ctx.strokeStyle = a.alert ? mag : blue;
+      ctx.globalAlpha = .45;
+      ctx.lineWidth = 1.25;
+      ctx.beginPath();
+      for (j = 0; j < a.hist.length; j += 2) {
+        if (j === 0) ctx.moveTo(a.hist[j], a.hist[j + 1]); else ctx.lineTo(a.hist[j], a.hist[j + 1]);
+      }
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+      var ang = Math.atan2(a.vy, a.vx);
+      ctx.save();
+      ctx.translate(a.x, a.y); ctx.rotate(ang);
+      ctx.fillStyle = a.alert ? mag : blue;
+      ctx.beginPath(); ctx.moveTo(7, 0); ctx.lineTo(-5, 4.5); ctx.lineTo(-3, 0); ctx.lineTo(-5, -4.5); ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function loop(t) {
+    if (!running) return;
+    var dt = Math.min(0.05, (t - last) / 1000 || 0.016);
+    last = t;
+    step(dt); draw();
+    requestAnimationFrame(loop);
+  }
+
+  function start() { if (reduce || running) return; running = true; last = performance.now(); requestAnimationFrame(loop); }
+  function stop() { running = false; }
+
+  var ro = ('ResizeObserver' in window) ? new ResizeObserver(function () { resize(); }) : null;
+  if (ro) ro.observe(canvas); else window.addEventListener('resize', resize);
+  resize();
+
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { e[0].isIntersecting ? start() : stop(); }).observe(canvas);
+  } else { start(); }
+
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  var onTheme = function () { buildGrid(); draw(); };
+  if (mq.addEventListener) mq.addEventListener('change', onTheme);
+})();
+</script>
+</body>
+</html>
